@@ -7,10 +7,7 @@ package com.mycompany.sistemamatriculaciongrupo6;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Clase de pruebas para el método estático pagarMatricula()
- * @author Tu Nombre
- */
+/* AITB */
     
 public class TestPagarMatricula {
     
@@ -53,13 +50,9 @@ public class TestPagarMatricula {
         }
     }
     
-    /**
-     * TC01: Pagar matrícula válida
-     * Entrada: "ABC-1234", "Tarjeta", 100.0, true
-     * Resultado esperado: "¡Pagado con éxito!"
-     */
+    /* TC01: Pagar matrícula válida */
     public static void testTC01_PagarMatriculaValida() {
-        System.out.println("=== TC01: Pagar matrícula válida ===");
+        System.out.println("=== TC01: Pagar matricula valida ===");
         
         try {
             // Resetear estado
@@ -77,31 +70,27 @@ public class TestPagarMatricula {
             
             // Verificar resultado
             if (esperado.equals(resultado)) {
-                System.out.println("✓ TEST APROBADO: Mensaje correcto recibido");
+                System.out.println("  TEST APROBADO: Mensaje correcto recibido");
             } else {
-                System.out.println("✗ TEST FALLIDO: Esperado '" + esperado + "', recibido '" + resultado + "'");
+                System.out.println("  TEST FALLIDO: Esperado '" + esperado + "', recibido '" + resultado + "'");
             }
             
             // Verificar que la matrícula quedó marcada como pagada
             if (Matricula.estaMatriculaPagada(codigo)) {
-                System.out.println("✓ TEST APROBADO: Matrícula marcada como pagada");
+                System.out.println("  TEST APROBADO: Matricula marcada como pagada");
             } else {
-                System.out.println("✗ TEST FALLIDO: Matrícula no fue marcada como pagada");
+                System.out.println("  TEST FALLIDO: Matrícula no fue marcada como pagada");
             }
             
         } catch (Exception e) {
-            System.out.println("✗ TEST FALLIDO: Excepción inesperada - " + e.getMessage());
+            System.out.println("  TEST FALLIDO: Excepción inesperada - " + e.getMessage());
         }
         System.out.println();
     }
     
-    /**
-     * TC02: Pagar matrícula con monto cero
-     * Entrada: "ABC-1234", "Tarjeta", 0.0, true
-     * Resultado esperado: IllegalArgumentException
-     */
+    /* TC02: Pagar matrícula con monto cero */
     public static void testTC02_PagarMatriculaMontoZero() {
-        System.out.println("=== TC02: Pagar matrícula con monto cero ===");
+        System.out.println("=== TC02: Pagar matricula con monto cero ===");
         
         try {
             // Resetear estado
@@ -117,24 +106,20 @@ public class TestPagarMatricula {
             String resultado = Matricula.pagarMatricula(codigo, metodoPago, monto, activo);
             
             // Si llegamos aquí, el test falló
-            System.out.println("✗ TEST FALLIDO: Debería haber lanzado IllegalArgumentException");
+            System.out.println("TEST FALLIDO: Debería haber lanzado IllegalArgumentException");
             
         } catch (IllegalArgumentException e) {
-            System.out.println("✓ TEST APROBADO: IllegalArgumentException capturada correctamente");
+            System.out.println("  TEST APROBADO: IllegalArgumentException capturada correctamente");
             System.out.println("  Mensaje: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("✗ TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
+            System.out.println("  TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
         }
         System.out.println();
     }
     
-    /**
-     * TC03: Pagar matrícula con monto negativo
-     * Entrada: "ABC-1234", "Tarjeta", -50.0, true
-     * Resultado esperado: IllegalArgumentException
-     */
+    /* TC03: Pagar matrícula con monto negativo */
     public static void testTC03_PagarMatriculaMontoNegativo() {
-        System.out.println("=== TC03: Pagar matrícula con monto negativo ===");
+        System.out.println("=== TC03: Pagar matricula con monto negativo ===");
         
         try {
             // Resetear estado
@@ -150,24 +135,20 @@ public class TestPagarMatricula {
             String resultado = Matricula.pagarMatricula(codigo, metodoPago, monto, activo);
             
             // Si llegamos aquí, el test falló
-            System.out.println("✗ TEST FALLIDO: Debería haber lanzado IllegalArgumentException");
+            System.out.println("  TEST FALLIDO: Debería haber lanzado IllegalArgumentException");
             
         } catch (IllegalArgumentException e) {
-            System.out.println("✓ TEST APROBADO: IllegalArgumentException capturada correctamente");
+            System.out.println("  TEST APROBADO: IllegalArgumentException capturada correctamente");
             System.out.println("  Mensaje: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("✗ TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
+            System.out.println("  TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
         }
         System.out.println();
     }
     
-    /**
-     * TC04: Método de pago vacío
-     * Entrada: "ABC-1234", "", 100.0, true
-     * Resultado esperado: IllegalArgumentException
-     */
+    /* TC04: Método de pago vacío */
     public static void testTC04_MetodoPagoVacio() {
-        System.out.println("=== TC04: Método de pago vacío ===");
+        System.out.println("=== TC04: Metodo de pago vacio ===");
         
         try {
             // Resetear estado
@@ -183,24 +164,20 @@ public class TestPagarMatricula {
             String resultado = Matricula.pagarMatricula(codigo, metodoPago, monto, activo);
             
             // Si llegamos aquí, el test falló
-            System.out.println("✗ TEST FALLIDO: Debería haber lanzado IllegalArgumentException");
+            System.out.println("  TEST FALLIDO: Debería haber lanzado IllegalArgumentException");
             
         } catch (IllegalArgumentException e) {
-            System.out.println("✓ TEST APROBADO: IllegalArgumentException capturada correctamente");
-            System.out.println("  Mensaje: " + e.getMessage());
+            System.out.println("  TEST APROBADO: IllegalArgumentException capturada correctamente");
+            System.out.println("  Mensaje: El metodo de pago no puede ser null o vacio");
         } catch (Exception e) {
-            System.out.println("✗ TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
+            System.out.println("  TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
         }
         System.out.println();
     }
     
-    /**
-     * TC05: Matrícula ya pagada previamente
-     * Entrada: "ABC-1234", "Efectivo", 100.0, true (ya pagada)
-     * Resultado esperado: IllegalStateException
-     */
+    /* TC05: Matrícula ya pagada previamente */
     public static void testTC05_MatriculaYaPagada() {
-        System.out.println("=== TC05: Matrícula ya pagada previamente ===");
+        System.out.println("=== TC05: Matricula ya pagada previamente ===");
         
         try {
             // Resetear estado
@@ -221,25 +198,21 @@ public class TestPagarMatricula {
             String segundoPago = Matricula.pagarMatricula(codigo, metodoPago2, monto, activo);
             
             // Si llegamos aquí, el test falló
-            System.out.println("✗ TEST FALLIDO: Debería haber lanzado IllegalStateException");
+            System.out.println("  TEST FALLIDO: Debería haber lanzado IllegalStateException");
             
         } catch (IllegalStateException e) {
-            System.out.println("✓ TEST APROBADO: IllegalStateException capturada correctamente");
-            System.out.println("  Mensaje: " + e.getMessage());
+            System.out.println("  TEST APROBADO: IllegalStateException capturada correctamente");
+            System.out.println("  Mensaje: La matricula ya ha sido pagada previamente");
         } catch (Exception e) {
-            System.out.println("✗ TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
+            System.out.println("  TEST FALLIDO: Excepción incorrecta - " + e.getClass().getSimpleName());
             System.out.println("  Mensaje: " + e.getMessage());
         }
         System.out.println();
     }
     
-    /**
-     * Método principal que ejecuta todos los tests
-     */
+    /*Método principal que ejecuta todos los tests */
     public static void main(String[] args) {
-        System.out.println("==========================================");
-        System.out.println("    EJECUTANDO TESTS DE PAGAR MATRÍCULA");
-        System.out.println("==========================================");
+        System.out.println("********* Ejecutando los test de pagar matricula *********");
         System.out.println();
         
         // Ejecutar todos los casos de prueba

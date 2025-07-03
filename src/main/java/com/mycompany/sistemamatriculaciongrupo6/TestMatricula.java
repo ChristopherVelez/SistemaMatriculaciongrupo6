@@ -4,9 +4,7 @@
  */
 package com.mycompany.sistemamatriculaciongrupo6;
 
-//import static com.mycompany.sistemamatriculaciongrupo6.SistemaMatriculacionGrupo6.consultarMatricula;
-//import java.util.Date;
-
+/* AITB */
 public class TestMatricula extends SistemaMatriculacionGrupo6{
 
     
@@ -40,7 +38,7 @@ public class TestMatricula extends SistemaMatriculacionGrupo6{
 
     public static void main(String[] args) {
         TestMatricula test = new TestMatricula();
-
+        System.out.println("      Resultado de los test      ");
         try {
             test.TC03ListaVacia();
             System.out.println("TC03: Aprobado");
